@@ -1,18 +1,19 @@
 const express = require('express');
-const app= express();
+const bodyParser = require('body-parser');
 
-app.use(express.json());
+const app = express();
 
-console.log("Application Running");
-app.post('/post_request',function(req,res){
-    console.log("post request");
-    const {name,email}=req.body;
-    res.json({ message: `Received data: Name - ${name}, Email - ${email}` });
+app.use(bodyParser.json());
 
+app.post('/execute', (req, res) => {
+  // Execute your code here
+  console.log('Received POST request:', req.body);
+  res.status(200).send('Request received and processed.');
 });
 
-app.listen('8070',function(){
-    console.log("Port is running");
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+  console.log(`Express server is running on port ${port}`);
 });
 
 
