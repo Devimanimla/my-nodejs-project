@@ -3,7 +3,8 @@ const app= express();
 
 app.use(express.json());
 
-app.post('/post_request',function(req,res){
+console.log("Application Running");
+/*app.post('/post_request',function(req,res){
     console.log("post request");
     const {name,email}=req.body;
     res.json({ message: `Received data: Name - ${name}, Email - ${email}` });
@@ -12,7 +13,7 @@ app.post('/post_request',function(req,res){
 
 app.listen('8070',function(){
     console.log("Port is running");
-});
+});*/
 
 
 
